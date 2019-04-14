@@ -1,0 +1,6 @@
+framework module Pods_ExhibitsPresentation {
+  umbrella header "Pods-ExhibitsPresentation-umbrella.h"
+
+  export *
+  module * { export * }
+}
