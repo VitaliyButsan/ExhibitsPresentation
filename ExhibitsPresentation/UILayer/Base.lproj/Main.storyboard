@@ -61,6 +61,7 @@
                                                                 </subviews>
                                                             </view>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="CG0-aX-p2g" firstAttribute="top" secondItem="eoN-BH-fej" secondAttribute="top" id="4mg-jt-syx"/>
                                                                 <constraint firstItem="uyB-BQ-fXm" firstAttribute="top" secondItem="eoN-BH-fej" secondAttribute="top" constant="33" id="A05-Oq-hLn"/>
@@ -79,6 +80,7 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

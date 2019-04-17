@@ -11,7 +11,6 @@ import UIKit
 class ExhibitsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    // singleton for receives data
     let exhibitsLoader = ExhibitsLoader()
     // data storage
     var exhibitsArray: [Exhibit] = []
@@ -27,7 +26,7 @@ class ExhibitsViewController: UIViewController, UITableViewDelegate, UITableView
             if !exhibits.isEmpty {
                 // save data to array
                 self.exhibitsArray = exhibits
-                // reload tablView
+                // reload tableView
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

@@ -13,7 +13,7 @@ class ExhibitsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var exhibitImageView: UIImageView!
    
-    // Set leyout to subviews collectionViewCell
+    // Set layout to subviews collectionViewCell
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -29,15 +29,27 @@ class ExhibitsCollectionViewCell: UICollectionViewCell {
     func updateCollectionViewCell(withTitle title: String, withImageLink imageLink: String) {
         // set title
         textLabel.text = title
+        
+        // "http" --> "https"
+        var secureImageLink = imageLink
+        let first5 = String(secureImageLink.prefix(5))
+        if first5 != "https" {
+            secureImageLink = "https" + imageLink.dropFirst(4)
+        }
+        
         // set image
-        let imageURL = URL(string: imageLink)
-        if let url = imageURL {
-            let data = try? Data(contentsOf: url)
-            if let imageData = data {
-                let image = UIImage(data: imageData)
-                self.exhibitImageView.image = image
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let url = URL(string: secureImageLink) {
+                let data = try? Data(contentsOf: url)
+                if let imageData = data {
+                    let image = UIImage(data: imageData)
+                    DispatchQueue.main.async {
+                        self.exhibitImageView.image = image
+                    }
+                }
             }
         }
+        
     }
 }
 
